@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ujikom</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="title_list">List App</string>
+</resources>
