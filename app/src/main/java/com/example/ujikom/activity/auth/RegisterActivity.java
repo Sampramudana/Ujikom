@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.spinClass)
     Spinner spinClass;
 
-    String[] classItem = {"--Pilih Kelas--", "12 RPL A", "12 RPL B", "12 TKJ A", "12 TKJ B", "12 TKJ C"};
+    String[] classItem = {"12 RPL A", "12 RPL B", "12 TKJ A", "12 TKJ B", "12 TKJ C"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +63,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(nama) || TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
                     Toast.makeText(this, "The fill cannot be empty", Toast.LENGTH_SHORT).show();
-                }else if (classItem.equals("--Pilih Kelas--")) {
-                    Toast.makeText(this, "The class cannot be empty", Toast.LENGTH_SHORT).show();
                 } else {
                     userRegister(nama, kelas, username, password);
                 }
