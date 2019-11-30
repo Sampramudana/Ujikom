@@ -1,8 +1,10 @@
 package com.example.ujikom.activity.auth;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +17,8 @@ import com.example.ujikom.R;
 import com.example.ujikom.activity.MainActivity;
 import com.example.ujikom.model.login.ResponseLogin;
 import com.example.ujikom.network.ApiClient;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,6 +28,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+
+    public static String MY_LOGIN_PREF = "myLoginPref";
+    public static String MY_LOGIN_PREF_KEY = "loginPrefKey";
+
+    public static String nama;
+    public static String kelas;
 
     @BindView(R.id.edtUsername)
     EditText edtUsername;
@@ -66,9 +76,21 @@ public class LoginActivity extends AppCompatActivity {
         ApiClient.service.responseLogin(paramUsername, paramPassword).enqueue(new Callback<ResponseLogin>() {
             @Override
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
-                if (response.body().getResult().equalsIgnoreCase("1")) {
+                ResponseLogin user = response.body();
+
+                getSharedPreferences(MY_LOGIN_PREF, Context.MODE_PRIVATE).edit().putString(MY_LOGIN_PREF_KEY, new Gson().toJson(user)).apply();
+
+                if (user.getResult().equalsIgnoreCase("1")) {
                     String message = response.body().getMsg();
                     Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+
+                    ResponseLogin savedUser = new Gson().fromJson(LoginActivity.this.getSharedPreferences(MY_LOGIN_PREF, Context.MODE_PRIVATE)
+                    .getString(MY_LOGIN_PREF_KEY, ""), ResponseLogin.class);
+
+                    nama = user.getUser().getNama();
+                    kelas = user.getUser().getKelas();
+
+                    Log.d("isi login", nama+" dan "+kelas);
 
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
