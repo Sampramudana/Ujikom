@@ -1,4 +1,4 @@
-package com.example.ujikom.activity;
+package com.example.ujikom.activity.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ujikom.R;
+import com.example.ujikom.activity.MainActivity;
 import com.example.ujikom.model.login.ResponseLogin;
 import com.example.ujikom.network.ApiClient;
 

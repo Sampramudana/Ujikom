@@ -1,4 +1,4 @@
-package com.example.ujikom.activity;
+package com.example.ujikom.activity.profile;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,11 +11,11 @@ import android.view.ViewGroup;
 
 import com.example.ujikom.R;
 
-public class HomeActivity extends Fragment {
+public class ProfileActivity extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_home, null);
+        return inflater.inflate(R.layout.activity_profile, null);
     }
 }

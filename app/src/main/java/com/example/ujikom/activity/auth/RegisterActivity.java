@@ -1,11 +1,13 @@
-package com.example.ujikom.activity;
+package com.example.ujikom.activity.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,8 +28,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     @BindView(R.id.edtRegisterName)
     EditText edtRegisterName;
-    @BindView(R.id.edtRegisterClass)
-    EditText edtRegisterClass;
     @BindView(R.id.edtRegisterUsername)
     EditText edtRegisterUsername;
     @BindView(R.id.edtRegisterPassword)
@@ -36,12 +36,19 @@ public class RegisterActivity extends AppCompatActivity {
     Button btnRegister;
     @BindView(R.id.txtLogin)
     TextView txtLogin;
+    @BindView(R.id.spinClass)
+    Spinner spinClass;
+
+    String[] classItem = {"--Pilih Kelas--", "12 RPL A", "12 RPL B", "12 TKJ A", "12 TKJ B", "12 TKJ C"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, classItem);
+        spinClass.setAdapter(adapter);
     }
 
     @OnClick({R.id.btnRegister, R.id.txtLogin})
@@ -50,12 +57,14 @@ public class RegisterActivity extends AppCompatActivity {
             case R.id.btnRegister:
 
                 String nama = edtRegisterName.getText().toString();
-                String kelas = edtRegisterClass.getText().toString();
+                String kelas = spinClass.getSelectedItem().toString();
                 String username = edtRegisterUsername.getText().toString();
                 String password = edtRegisterPassword.getText().toString();
 
-                if (TextUtils.isEmpty(nama) || TextUtils.isEmpty(kelas) || TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+                if (TextUtils.isEmpty(nama) || TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
                     Toast.makeText(this, "The fill cannot be empty", Toast.LENGTH_SHORT).show();
+                }else if (classItem.equals("--Pilih Kelas--")) {
+                    Toast.makeText(this, "The class cannot be empty", Toast.LENGTH_SHORT).show();
                 } else {
                     userRegister(nama, kelas, username, password);
                 }
@@ -79,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (status.equalsIgnoreCase("1")) {
                         Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                    } else if (status.equalsIgnoreCase("0")){
+                    } else if (status.equalsIgnoreCase("0")) {
                         Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
                 }
