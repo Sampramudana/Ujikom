@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ujikom">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.home.TambahSiswaActivity"></activity>
+        <activity android:name=".activity.profile.EditProfileActivity"></activity>
+        <activity android:name=".activity.profile.EditPassActivity" />
+        <activity android:name=".activity.home.TambahSiswaActivity" />
         <activity android:name=".activity.profile.ProfileActivity" />
         <activity
             android:name=".activity.home.HomeActivity"
@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".activity.MainActivity" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
