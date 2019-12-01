@@ -41,5 +41,26 @@ public class ProfileActivity extends Fragment {
 
         txtNamaUser.setText(nama);
         txtNamaKelas.setText(kelas);
+
+        btnEditUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), EditProfileActivity.class));
+            }
+        });
+
+        btnChangeUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), EditPassActivity.class));
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 }
