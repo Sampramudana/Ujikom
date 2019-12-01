@@ -14,7 +14,8 @@ import com.example.ujikom.R;
 public class ProfileActivity extends Fragment {
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.activity_profile, container, false);
     }
 }
