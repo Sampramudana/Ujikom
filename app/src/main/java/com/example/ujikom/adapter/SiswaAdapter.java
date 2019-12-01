@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ujikom.R;
 import com.example.ujikom.model.getsantri.ResponseGetSantri;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewHolder> {
@@ -19,7 +20,7 @@ public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewHolder> 
     Context context;
     List<ResponseGetSantri> dataGetSantri;
 
-    public SiswaAdapter(Context context, List<ResponseGetSantri> dataGetSantri) {
+    public SiswaAdapter(Context context, ArrayList<ResponseGetSantri> dataGetSantri) {
         this.context = context;
         this.dataGetSantri = dataGetSantri;
     }
