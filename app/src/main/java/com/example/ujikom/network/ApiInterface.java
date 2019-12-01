@@ -12,6 +12,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiInterface {
 
@@ -37,5 +38,5 @@ public interface ApiInterface {
 
     // TODO Get Santri
     @GET("get_santri.php")
-    Call<ArrayList<ResponseGetSantri>> responseGetSantri();
+    Call<ArrayList<ResponseGetSantri>> responseGetSantri(@Query("kelas") String kelas);
 }
