@@ -39,7 +39,7 @@ public class ProfileActivity extends Fragment {
         String nama = LoginActivity.nama;
         String kelas = LoginActivity.kelas;
 
-        txtNamaUser.setText(nama);
+        txtNamaUser.setText("Ust. " + nama);
         txtNamaKelas.setText(kelas);
 
         btnEditUser.setOnClickListener(new View.OnClickListener() {

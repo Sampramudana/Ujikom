@@ -32,8 +32,12 @@ public class LoginActivity extends AppCompatActivity {
     public static String MY_LOGIN_PREF = "myLoginPref";
     public static String MY_LOGIN_PREF_KEY = "loginPrefKey";
 
+    public static String id;
     public static String nama;
     public static String kelas;
+
+    public static String username;
+    public static String password;
 
     @BindView(R.id.edtUsername)
     EditText edtUsername;
@@ -87,8 +91,11 @@ public class LoginActivity extends AppCompatActivity {
                     ResponseLogin savedUser = new Gson().fromJson(LoginActivity.this.getSharedPreferences(MY_LOGIN_PREF, Context.MODE_PRIVATE)
                     .getString(MY_LOGIN_PREF_KEY, ""), ResponseLogin.class);
 
+                    id = user.getUser().getIdUser();
                     nama = user.getUser().getNama();
                     kelas = user.getUser().getKelas();
+                    username = user.getUser().getVsusername();
+                    password = user.getUser().getVspassword();
 
                     Log.d("isi login", nama+" dan "+kelas);
 
