@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ujikom.R;
+import com.example.ujikom.activity.MainActivity;
 import com.example.ujikom.activity.auth.LoginActivity;
 import com.example.ujikom.model.tambahsantri.ResponseTambahSantri;
 import com.example.ujikom.network.ApiClient;
@@ -59,7 +60,7 @@ public class TambahSiswaActivity extends AppCompatActivity {
 
                     if (status.equalsIgnoreCase("1")) {
                         Toast.makeText(TambahSiswaActivity.this, pesan, Toast.LENGTH_SHORT).show();
-//                        startActivity(new Intent(TambahSiswaActivity.this, HomeActivity.class));
+                        startActivity(new Intent(TambahSiswaActivity.this, MainActivity.class));
                         finish();
                     } else if (status.equalsIgnoreCase("0")) {
                         Toast.makeText(TambahSiswaActivity.this, pesan, Toast.LENGTH_SHORT).show();
