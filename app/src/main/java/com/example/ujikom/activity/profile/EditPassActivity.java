@@ -1,5 +1,6 @@
 package com.example.ujikom.activity.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ujikom.R;
+import com.example.ujikom.activity.MainActivity;
 import com.example.ujikom.activity.auth.LoginActivity;
 import com.example.ujikom.model.updateuser.ResponseUpdateUser;
 import com.example.ujikom.network.ApiClient;
@@ -59,6 +61,8 @@ public class EditPassActivity extends AppCompatActivity {
 
                     if (message.equalsIgnoreCase("update sukses")){
                         Toast.makeText(EditPassActivity.this, message, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditPassActivity.this, MainActivity.class));
+                        finish();
                     } else if (status.equalsIgnoreCase("0")){
                         Toast.makeText(EditPassActivity.this, message, Toast.LENGTH_SHORT).show();
                     }

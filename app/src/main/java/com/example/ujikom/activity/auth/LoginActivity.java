@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ujikom.R;
 import com.example.ujikom.activity.MainActivity;
+import com.example.ujikom.activity.admin.AdminActivity;
 import com.example.ujikom.model.login.ResponseLogin;
 import com.example.ujikom.network.ApiClient;
 import com.google.gson.Gson;
@@ -101,8 +102,14 @@ public class LoginActivity extends AppCompatActivity {
 
                     Log.d("isi login", nama+" dan "+kelas);
 
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
+                    if (kelas.equals("-")){
+                        startActivity(new Intent(LoginActivity.this, AdminActivity.class));
+                        finish();
+                    }else{
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    }
+
                 } else {
                     Toast.makeText(LoginActivity.this, "Gagal Login", Toast.LENGTH_SHORT).show();
                 }
