@@ -1,5 +1,6 @@
 package com.example.ujikom.activity.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ujikom.R;
+import com.example.ujikom.activity.MainActivity;
 import com.example.ujikom.activity.auth.LoginActivity;
 import com.example.ujikom.model.updateuser.ResponseUpdateUser;
 import com.example.ujikom.network.ApiClient;
@@ -38,6 +40,10 @@ public class EditProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
         ButterKnife.bind(this);
 
+        String nama = LoginActivity.nama;
+
+        editNamaUser.setText(nama);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, classItem);
         spinEditClass.setAdapter(adapter);
     }
@@ -48,7 +54,7 @@ public class EditProfileActivity extends AppCompatActivity {
         String nama = editNamaUser.getText().toString();
         String kelas = spinEditClass.getSelectedItem().toString();
         String username = LoginActivity.username;
-        String password = LoginActivity.password;
+        String password = LoginActivity.passwords;
 
         updateUser(nama, username, password, kelas);
     }
@@ -65,8 +71,10 @@ public class EditProfileActivity extends AppCompatActivity {
                     String message = response.body().getMessage();
                     String status = response.body().getStatus();
 
-                    if (message.equalsIgnoreCase("update sukses")){
+                    if (status.equalsIgnoreCase("1")){
                         Toast.makeText(EditProfileActivity.this, message, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditProfileActivity.this, MainActivity.class));
+                        finish();
                     } else if (status.equalsIgnoreCase("0")){
                         Toast.makeText(EditProfileActivity.this, message, Toast.LENGTH_SHORT).show();
                     }

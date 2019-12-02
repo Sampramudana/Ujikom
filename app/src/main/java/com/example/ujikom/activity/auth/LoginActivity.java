@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     public static String kelas;
 
     public static String username;
-    public static String password;
+    public static String passwords;
 
     @BindView(R.id.edtUsername)
     EditText edtUsername;
@@ -63,10 +63,13 @@ public class LoginActivity extends AppCompatActivity {
                 String username = edtUsername.getText().toString();
                 String password = edtPassword.getText().toString();
 
+                passwords = password;
+
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
                     Toast.makeText(this, "Cannot be empty", Toast.LENGTH_SHORT).show();
                 } else {
                     userLogin(username, password);
+
                 }
 
                 break;
@@ -95,7 +98,6 @@ public class LoginActivity extends AppCompatActivity {
                     nama = user.getUser().getNama();
                     kelas = user.getUser().getKelas();
                     username = user.getUser().getVsusername();
-                    password = user.getUser().getVspassword();
 
                     Log.d("isi login", nama+" dan "+kelas);
 
