@@ -64,7 +64,7 @@ public class HomeActivity extends Fragment {
     }
 
     private void getReadSiswa(String kelas) {
-        ApiClient.service.responseGetSantri(kelas).enqueue(new Callback<ArrayList<ResponseGetSantri>>() {
+        ApiClient.service.responseGetSantri().enqueue(new Callback<ArrayList<ResponseGetSantri>>() {
             @Override
             public void onResponse(Call<ArrayList<ResponseGetSantri>> call, Response<ArrayList<ResponseGetSantri>> response) {
                 if (response.code() == 200) {
