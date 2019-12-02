@@ -4,7 +4,6 @@ import com.example.ujikom.model.getsantri.ResponseGetSantri;
 import com.example.ujikom.model.login.ResponseLogin;
 import com.example.ujikom.model.register.ResponseRegister;
 import com.example.ujikom.model.tambahsantri.ResponseTambahSantri;
-import com.example.ujikom.model.updateuser.ResponseUpdateUser;
 
 import java.util.ArrayList;
 
@@ -13,8 +12,6 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.PUT;
-import retrofit2.http.Query;
 
 public interface ApiInterface {
 
@@ -41,12 +38,4 @@ public interface ApiInterface {
     // TODO Get Santri
     @GET("get_santri.php")
     Call<ArrayList<ResponseGetSantri>> responseGetSantri();
-
-    // TODO Update User
-    @PUT("update_user.php")
-    Call<ResponseUpdateUser> responseUpdateUser(@Query("id_user") String id_user,
-                                                @Query("nama") String nama,
-                                                @Query("vsusername") String vsusername,
-                                                @Query("vspassword") String vspassword,
-                                                @Query("kelas") String kelas);
 }

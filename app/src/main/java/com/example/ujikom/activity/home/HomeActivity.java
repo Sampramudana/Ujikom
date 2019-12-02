@@ -9,7 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +27,6 @@ import com.example.ujikom.network.ApiClient;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -36,9 +35,7 @@ public class HomeActivity extends Fragment {
 
     private ArrayList<ResponseGetSantri> data = null;
 
-    SearchView searchBar;
-    TextView txtKelasHome;
-    RecyclerView recyclerSiswa;
+    private RecyclerView recyclerSiswa;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,8 +49,8 @@ public class HomeActivity extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        searchBar = view.findViewById(R.id.searchBar);
-        txtKelasHome = view.findViewById(R.id.txtKelasHome);
+        EditText searchBar = view.findViewById(R.id.searchBar);
+        TextView txtKelasHome = view.findViewById(R.id.txtKelasHome);
         recyclerSiswa = view.findViewById(R.id.recyclerSiswa);
 
         String kelas = LoginActivity.kelas;
@@ -61,6 +58,7 @@ public class HomeActivity extends Fragment {
         Log.d("kelasHome", kelas);
         txtKelasHome.setText(kelas);
         getReadSiswa(kelas);
+
     }
 
     private void getReadSiswa(String kelas) {
