@@ -7,4 +7,15 @@
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="title_list">List App</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_list_santri">List Santri</string>
+    <string name="menu_list_kelas">List Kelas</string>
+    <string name="menu_profil_admin">Profil Admin</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.ujikom.model.getsantri;
+package com.example.ujikom.model.getSantri;
 
 import com.google.gson.annotations.SerializedName;
 

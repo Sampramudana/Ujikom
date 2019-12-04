@@ -21,26 +21,18 @@
             android:padding="15dp">
 
             <TextView
-                android:id="@+id/txtNamaSiswa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:text="Nama Anda"/>
-
-            <TextView
-                android:id="@+id/txtItemKelas"
+                android:id="@+id/txtKelas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/txtNamaSiswa"
-                android:text="Kelas" />
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:text="kelas" />
+
 
         </RelativeLayout>
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_list_santri">
+
+    <fragment
+        android:id="@+id/nav_list_santri"
+        android:name="com.example.ujikom.activity.admin.ui.listSantri.ListSantriFragment"
+        android:label="@string/menu_list_santri"
+        tools:layout="@layout/list_santri_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_list_kelas"
+        android:name="com.example.ujikom.activity.admin.ui.listKelas.ListKelasFragment"
+        android:label="@string/menu_list_kelas"
+        tools:layout="@layout/list_kelas_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_admin_profile"
+        android:name="com.example.ujikom.activity.admin.ui.adminProfile.AdminProfileFragment"
+        android:label="@string/menu_profil_admin"
+        tools:layout="@layout/admin_profile_fragment"/>
+
+</navigation>

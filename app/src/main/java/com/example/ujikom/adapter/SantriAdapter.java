@@ -10,17 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ujikom.R;
-import com.example.ujikom.model.getsantri.ResponseGetSantri;
+import com.example.ujikom.model.getSantri.ResponseGetSantri;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewHolder> {
+public class SantriAdapter extends RecyclerView.Adapter<SantriAdapter.ViewHolder> {
 
     Context context;
     List<ResponseGetSantri> dataGetSantri;
 
-    public SiswaAdapter(Context context, ArrayList<ResponseGetSantri> dataGetSantri) {
+    public SantriAdapter(Context context, ArrayList<ResponseGetSantri> dataGetSantri) {
         this.context = context;
         this.dataGetSantri = dataGetSantri;
     }

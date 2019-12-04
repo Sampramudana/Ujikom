@@ -19,7 +19,6 @@ import com.example.ujikom.activity.admin.AdminActivity;
 import com.example.ujikom.model.login.ResponseLogin;
 import com.example.ujikom.network.ApiClient;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

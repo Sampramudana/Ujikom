@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.admin.AdminActivity"></activity>
+        <activity android:name=".activity.admin.ui.listKelas.TambahKelasActivity"></activity>
+        <activity
+            android:name=".activity.admin.AdminActivity"
+            android:label="@string/title_activity_admin"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.profile.EditProfileActivity"
             android:label="Edit Nama dan Kelas" />

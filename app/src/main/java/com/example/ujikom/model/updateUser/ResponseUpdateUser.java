@@ -1,4 +1,4 @@
-package com.example.ujikom.model.updateuser;
+package com.example.ujikom.model.updateUser;
 
 import com.google.gson.annotations.SerializedName;
 

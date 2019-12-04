@@ -9,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +21,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ujikom.R;
 import com.example.ujikom.activity.auth.LoginActivity;
-import com.example.ujikom.adapter.SiswaAdapter;
-import com.example.ujikom.model.getsantri.ResponseGetSantri;
+import com.example.ujikom.adapter.SantriAdapter;
+import com.example.ujikom.model.getSantri.ResponseGetSantri;
 import com.example.ujikom.network.ApiClient;
 
 import java.util.ArrayList;
@@ -75,7 +74,7 @@ public class HomeActivity extends Fragment {
                     } else {
                         recyclerSiswa.setHasFixedSize(true);
                         recyclerSiswa.setLayoutManager(new LinearLayoutManager(getActivity()));
-                        recyclerSiswa.setAdapter(new SiswaAdapter(getActivity(), data));
+                        recyclerSiswa.setAdapter(new SantriAdapter(getActivity(), data));
                     }
                 }
             }

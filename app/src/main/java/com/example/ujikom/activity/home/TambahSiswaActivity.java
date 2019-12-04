@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.ujikom.R;
 import com.example.ujikom.activity.MainActivity;
 import com.example.ujikom.activity.auth.LoginActivity;
-import com.example.ujikom.model.tambahsantri.ResponseTambahSantri;
+import com.example.ujikom.model.tambahSantri.ResponseTambahSantri;
 import com.example.ujikom.network.ApiClient;
 
 import butterknife.BindView;

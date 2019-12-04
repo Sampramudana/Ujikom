@@ -1,8 +1,8 @@
-package com.example.ujikom.model.tambahsantri;
+package com.example.ujikom.model.getAdminSantri;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ResponseTambahSantri{
+public class ResponseGetAllSantri{
 
 	@SerializedName("nama_santri")
 	private String namaSantri;
@@ -10,11 +10,8 @@ public class ResponseTambahSantri{
 	@SerializedName("kelas")
 	private String kelas;
 
-	@SerializedName("message")
-	private String message;
-
-	@SerializedName("status")
-	private String status;
+	@SerializedName("id")
+	private String id;
 
 	public void setNamaSantri(String namaSantri){
 		this.namaSantri = namaSantri;
@@ -32,30 +29,21 @@ public class ResponseTambahSantri{
 		return kelas;
 	}
 
-	public void setMessage(String message){
-		this.message = message;
+	public void setId(String id){
+		this.id = id;
 	}
 
-	public String getMessage(){
-		return message;
-	}
-
-	public void setStatus(String status){
-		this.status = status;
-	}
-
-	public String getStatus(){
-		return status;
+	public String getId(){
+		return id;
 	}
 
 	@Override
  	public String toString(){
 		return 
-			"ResponseTambahSantri{" + 
+			"ResponseGetAllSantri{" + 
 			"nama_santri = '" + namaSantri + '\'' + 
 			",kelas = '" + kelas + '\'' + 
-			",message = '" + message + '\'' + 
-			",status = '" + status + '\'' + 
+			",id = '" + id + '\'' + 
 			"}";
 		}
 }
