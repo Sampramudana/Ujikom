@@ -3,10 +3,12 @@ package com.example.ujikom.network;
 import com.example.ujikom.model.getAdminKelas.ResponseGetKelas;
 import com.example.ujikom.model.getAdminSantri.ResponseGetAllSantri;
 import com.example.ujikom.model.getSantri.ResponseGetSantri;
+import com.example.ujikom.model.getuang.ResponseGetUang;
 import com.example.ujikom.model.login.ResponseLogin;
 import com.example.ujikom.model.register.ResponseRegister;
 import com.example.ujikom.model.tambahKelas.ResponseTambahKelas;
 import com.example.ujikom.model.tambahSantri.ResponseTambahSantri;
+import com.example.ujikom.model.transaksi.ResponseTransaksi;
 import com.example.ujikom.model.updateUser.ResponseUpdateUser;
 
 import java.util.ArrayList;
@@ -65,4 +67,17 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("insert_kelas.php")
     Call<ResponseTambahKelas> responseTambahKelas(@Field("kelas") String kelas);
+
+    // TODO Get Uang
+    @GET("get_uang_by_id.php")
+    Call<ArrayList<ResponseGetUang>> responseGetUang(@Query("id_santri") String id_santri);
+
+    // TODO Transaksi
+    @FormUrlEncoded
+    @POST("transaksi.php")
+    Call<ResponseTransaksi> responseTransaksi(@Field("uang") String uang,
+                                              @Field("id_santri") String id_santri,
+                                              @Field("status_uang") String status_uang,
+                                              @Field("selisih_uang") String selisih_uang,
+                                              @Field("keterangan") String keterangan);
 }
