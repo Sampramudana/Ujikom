@@ -1,6 +1,6 @@
 package com.example.ujikom.network;
 
-import com.example.ujikom.model.getAdminKelas.ResponseGetKelas;
+import com.example.ujikom.model.getKelas.ResponseGetKelas;
 import com.example.ujikom.model.getAdminSantri.ResponseGetAllSantri;
 import com.example.ujikom.model.getSantri.ResponseGetSantri;
 import com.example.ujikom.model.getuang.ResponseGetUang;

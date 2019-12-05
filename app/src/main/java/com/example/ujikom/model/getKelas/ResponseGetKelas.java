@@ -1,4 +1,4 @@
-package com.example.ujikom.model.getAdminKelas;
+package com.example.ujikom.model.getKelas;
 
 import com.google.gson.annotations.SerializedName;
 
