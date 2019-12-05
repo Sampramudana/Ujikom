@@ -58,7 +58,7 @@ public class EditProfileActivity extends AppCompatActivity {
         spinEditClass.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                kelas = parent.getItemAtPosition(position).toString();v
+                kelas = parent.getItemAtPosition(position).toString();
             }
 
             @Override
