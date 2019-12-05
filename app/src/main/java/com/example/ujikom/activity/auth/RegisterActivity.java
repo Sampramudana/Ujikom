@@ -50,16 +50,11 @@ public class RegisterActivity extends AppCompatActivity {
 
     public String kelas;
 
-//    String[] classItem = {"12 RPL A", "12 RPL B", "12 TKJ A", "12 TKJ B", "12 TKJ C"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, classItem);
-//        spinClass.setAdapter(adapter);
 
         initSpinnerKelas();
 
