@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 
 import com.example.ujikom.R;
 import com.example.ujikom.adapter.adminAdapter.AdminKelasAdapter;
-import com.example.ujikom.model.getAdminKelas.ResponseGetKelas;
+import com.example.ujikom.model.getKelas.ResponseGetKelas;
 import com.example.ujikom.network.ApiClient;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -61,6 +62,7 @@ public class ListKelasFragment extends Fragment {
             public void onResponse(Call<ArrayList<ResponseGetKelas>> call, Response<ArrayList<ResponseGetKelas>> response) {
                 if (response.code() == 200){
                     data = response.body();
+                    Log.d("dataKelasAdmin", ""+data);
 
                     if (data == null){
                         Toast.makeText(getActivity(), "Data Tidak Ada", Toast.LENGTH_SHORT).show();

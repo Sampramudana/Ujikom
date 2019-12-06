@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ujikom.R;
-import com.example.ujikom.model.getAdminKelas.ResponseGetKelas;
+import com.example.ujikom.model.getKelas.ResponseGetKelas;
 
 import java.util.ArrayList;
 import java.util.List;

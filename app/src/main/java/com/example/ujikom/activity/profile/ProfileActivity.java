@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.example.ujikom.R;
-import com.example.ujikom.Util.SaveSharedPreference;
 import com.example.ujikom.activity.auth.LoginActivity;
 
 import butterknife.BindView;
@@ -60,8 +59,7 @@ public class ProfileActivity extends Fragment {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SaveSharedPreference.setLoggedOut(getContext());
-                startActivity(new Intent(getActivity(), LoginActivity.class));
+
             }
         });
     }
