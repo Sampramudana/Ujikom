@@ -2,6 +2,7 @@ package com.example.ujikom.activity.auth;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,8 +15,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ujikom.R;
+import com.example.ujikom.Util.SaveSharedPreference;
 import com.example.ujikom.activity.MainActivity;
 import com.example.ujikom.activity.admin.AdminActivity;
+import com.example.ujikom.activity.home.HomeActivity;
+import com.example.ujikom.activity.profile.ProfileActivity;
 import com.example.ujikom.model.login.ResponseLogin;
 import com.example.ujikom.network.ApiClient;
 import com.google.gson.Gson;
@@ -27,10 +31,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity {
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
+import static com.example.ujikom.Util.PreferencesUtility.ID_PREF;
+import static com.example.ujikom.Util.PreferencesUtility.KELAS_PREF;
+import static com.example.ujikom.Util.PreferencesUtility.LOGGED_IN_PREF;
+import static com.example.ujikom.Util.PreferencesUtility.NAMA_PREF;
+import static com.example.ujikom.Util.PreferencesUtility.USERNAME_PREF;
 
-    public static String MY_LOGIN_PREF = "myLoginPref";
-    public static String MY_LOGIN_PREF_KEY = "loginPrefKey";
+public class LoginActivity extends AppCompatActivity {
 
     public static String id;
     public static String nama;
@@ -53,6 +61,16 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        if (SaveSharedPreference.getLoggedStatus(getApplicationContext(), LOGGED_IN_PREF)) {
+            id = SaveSharedPreference.getLoggedStatusString(getApplicationContext(), ID_PREF);
+            nama = SaveSharedPreference.getLoggedStatusString(getApplicationContext(), NAMA_PREF);
+            kelas = SaveSharedPreference.getLoggedStatusString(getApplicationContext(), KELAS_PREF);
+            username = SaveSharedPreference.getLoggedStatusString(getApplicationContext(), USERNAME_PREF);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     @OnClick({R.id.btnLogin, R.id.txtRegister})
@@ -69,7 +87,6 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(this, "Cannot be empty", Toast.LENGTH_SHORT).show();
                 } else {
                     userLogin(username, password);
-
                 }
 
                 break;
@@ -85,14 +102,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
                 ResponseLogin user = response.body();
 
-                getSharedPreferences(MY_LOGIN_PREF, Context.MODE_PRIVATE).edit().putString(MY_LOGIN_PREF_KEY, new Gson().toJson(user)).apply();
-
                 if (user.getResult().equalsIgnoreCase("1")) {
                     String message = response.body().getMsg();
                     Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
-
-                    ResponseLogin savedUser = new Gson().fromJson(LoginActivity.this.getSharedPreferences(MY_LOGIN_PREF, Context.MODE_PRIVATE)
-                    .getString(MY_LOGIN_PREF_KEY, ""), ResponseLogin.class);
 
                     id = user.getUser().getIdUser();
                     nama = user.getUser().getNama();
@@ -100,6 +112,8 @@ public class LoginActivity extends AppCompatActivity {
                     username = user.getUser().getVsusername();
 
                     Log.d("isi login", nama+" dan "+kelas);
+
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, kelas, username, nama, id);
 
                     if (kelas.equals("-")){
                         startActivity(new Intent(LoginActivity.this, AdminActivity.class));
@@ -121,3 +135,4 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 }
+

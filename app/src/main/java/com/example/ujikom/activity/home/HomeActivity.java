@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ujikom.R;
+import com.example.ujikom.activity.MainActivity;
 import com.example.ujikom.activity.auth.LoginActivity;
 import com.example.ujikom.adapter.SantriAdapter;
 import com.example.ujikom.model.getSantri.ResponseGetSantri;

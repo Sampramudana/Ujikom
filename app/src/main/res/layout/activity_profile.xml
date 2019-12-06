@@ -49,8 +49,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtNamaKelas"
                 android:layout_marginTop="20dp"
-                android:text="edit"
-                android:layout_marginLeft="250dp"/>
+                android:background="@drawable/blue_button"
+                android:textColor="#FFF"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:layout_marginLeft="260dp"/>
 
         </RelativeLayout>
 
@@ -63,10 +66,10 @@
         android:gravity="center"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/white_button"
         android:text="Change Username and Password"
         android:textAllCaps="false"
-        android:textColor="#FFF"/>
+        android:textColor="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/btnLogout"
@@ -76,7 +79,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:background="#C93D3D"
+        android:background="@drawable/blue_button"
         android:text="Logout"
         android:textAllCaps="false"
         android:textColor="#FFF"/>

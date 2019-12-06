@@ -24,13 +24,16 @@
         <activity
             android:name=".activity.profile.EditPassActivity"
             android:label="Edit Password dan Username" />
-        <activity android:name=".activity.home.TambahSiswaActivity" />
+        <activity android:name=".activity.home.TambahSiswaActivity"
+            android:label="Tambah Siswa"/>
         <activity android:name=".activity.profile.ProfileActivity" />
         <activity
             android:name=".activity.home.HomeActivity"
             android:label="@string/title_activity_home" />
-        <activity android:name=".activity.auth.RegisterActivity" />
-        <activity android:name=".activity.auth.LoginActivity">
+        <activity android:name=".activity.auth.RegisterActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".activity.auth.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
