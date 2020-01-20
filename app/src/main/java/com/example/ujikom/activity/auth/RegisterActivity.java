@@ -62,7 +62,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 kelas = parent.getItemAtPosition(position).toString();
-
             }
 
             @Override

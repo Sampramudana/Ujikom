@@ -35,6 +35,9 @@ public class EditPassActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_pass);
         ButterKnife.bind(this);
+
+        String username = LoginActivity.username;
+        editUsername.setText(username);
     }
 
     @OnClick(R.id.btnSaveEdit)
